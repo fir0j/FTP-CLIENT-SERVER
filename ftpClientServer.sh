@@ -3,7 +3,7 @@
 function clientTosever() 
 { 
 	
-SERVER="192.168.1.35"
+SERVER="192.168.1.4"
 USER="firoj"
 PASS="  "
 #login to remote server_directory
