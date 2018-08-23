@@ -1,24 +1,35 @@
 #!/usr/bin/env bash 
-function execftp() 
+
+function clientTosever() 
 { 
 	
 SERVER="192.168.1.9"
 USER="firoj"
 PASS="  "
 
-#server_directory
-    serverdir="/home/firoj/Desktop/"
+#login to remote server_directory
+ftp -inv "${SERVER}" <<enteringlines
+user "${USER}" "${PASS}"
+cd "${currentdir}"
+mput *.html
+bye
+enteringlines
+}
 
-#Client_directory
-    clientdir="/home/firoj/"
+
+function serverToclient() 
+{ 
+	
+SERVER="192.168.1.9"
+USER="firoj"
+PASS="  "
 
 #login to remote server_directory
 ftp -inv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
-ls
+cd "${currentdir}"
+mget *.html
 bye
-# cd "${serverdir}"
-# get index.html
 enteringlines
 }
 
@@ -27,30 +38,33 @@ function menu()
 
 	echo -e "CLIENT-SERVER DEMONSTRATION USING FTP CONNECTION \n-------------------------------------------------"
 	echo "1. Show file in the Current Directory"
-	echo "2. Transfer the file to the Server"
-	echo "3. Get the file from the server"
-	echo "4. exit"
+	echo "2. Transfer the file From Client to Server"
+	echo "3. Download the file from Server to Client"
+	echo "4. Exit"
 }
 
 # Above functions are declared
 
 menu
+currentdir="`pwd`"
 while true
 do
 read choice
 case $choice in
     1)
-	    echo -e "\n"
-	    execftp
+	    echo -e "\nFiles in the current directory are:\n--------------------------------------"
+	    ls
 	    echo
 	    menu
 	    ;;
     2)
-	    echo -e "\nOkay! transfering file to the server"
+	    echo -e "\n"
+	    clientToserver
 	    menu
 	    ;;
     3)
-	    echo -e "\nOkay! downloading file from the server"
+	    echo -e "\n"
+	    serverToclient
 	    menu
 	    ;;
     4)
