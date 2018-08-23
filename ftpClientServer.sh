@@ -10,7 +10,7 @@ PASS="  "
 ftp -inv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
 cd "`${currentdir}`"
-ls
+pwd
 # mput *.html
 bye
 enteringlines
@@ -28,7 +28,7 @@ PASS="  "
 ftp -inv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
 cd "`${currentdir}`"
-ls
+pwd
 # mget *.html
 bye
 enteringlines
