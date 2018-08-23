@@ -9,13 +9,10 @@ PASS="  "
 #login to remote server_directory
 ftp -inv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
-cd "`${currentdir}`"
-pwd
-# mput *.html
-bye
+cd "$currentdir"
+mput *.html
 enteringlines
 }
-
 
 function serverToclient() 
 { 
@@ -27,9 +24,8 @@ PASS="  "
 #login to remote server_directory
 ftp -inv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
-cd "`${currentdir}`"
-pwd
-# mget *.html
+cd "$currentdir"
+mget *.html
 bye
 enteringlines
 }
@@ -37,7 +33,7 @@ enteringlines
 function menu()
 {
 
-	echo -e "CLIENT-SERVER DEMONSTRATION USING FTP CONNECTION \n-------------------------------------------------"
+	echo -e "\n\nCLIENT-SERVER DEMONSTRATION USING FTP CONNECTION \n-------------------------------------------------"
 	echo "1. Show file in the Current Directory"
 	echo "2. Transfer the file From Client to Server"
 	echo "3. Download the file from Server to Client"
@@ -45,7 +41,6 @@ function menu()
 }
 
 currentdir="`pwd`"
-# Above functions are declared
 menu
 while true
 do
