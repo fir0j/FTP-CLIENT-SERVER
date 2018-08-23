@@ -43,10 +43,9 @@ function menu()
 	echo "4. Exit"
 }
 
-# Above functions are declared
-
-menu
 currentdir="`pwd`"
+# Above functions are declared
+menu
 while true
 do
 read choice
@@ -59,7 +58,7 @@ case $choice in
 	    ;;
     2)
 	    echo -e "\n"
-	    clientToserver
+	    clientTosever
 	    menu
 	    ;;
     3)
