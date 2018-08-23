@@ -3,14 +3,14 @@
 function clientTosever() 
 { 
 	
-SERVER="192.168.43.45"
+SERVER="192.168.1.35"
 USER="firoj"
 PASS="  "
 #login to remote server_directory
 ftp -inv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
 cd "$currentdir"
-mput *.html
+ls
 enteringlines
 }
 
