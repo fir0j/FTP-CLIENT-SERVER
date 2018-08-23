@@ -10,7 +10,8 @@ PASS="  "
 ftp -inv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
 cd "`${currentdir}`"
-mput *.html
+ls
+# mput *.html
 bye
 enteringlines
 }
@@ -27,7 +28,8 @@ PASS="  "
 ftp -inv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
 cd "`${currentdir}`"
-mget *.html
+ls
+# mget *.html
 bye
 enteringlines
 }
