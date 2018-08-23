@@ -6,11 +6,10 @@ function clientTosever()
 SERVER="192.168.1.9"
 USER="firoj"
 PASS="  "
-
 #login to remote server_directory
 ftp -inv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
-cd "${currentdir}"
+cd "`${currentdir}`"
 mput *.html
 bye
 enteringlines
@@ -27,7 +26,7 @@ PASS="  "
 #login to remote server_directory
 ftp -inv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
-cd "${currentdir}"
+cd "`${currentdir}`"
 mget *.html
 bye
 enteringlines
