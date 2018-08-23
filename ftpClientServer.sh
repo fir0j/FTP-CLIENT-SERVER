@@ -17,7 +17,7 @@ enteringlines
 function serverToclient() 
 { 
 	
-SERVER="192.168.1.9"
+SERVER="192.168.1.4"
 USER="firoj"
 PASS="  "
 
