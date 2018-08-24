@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 
 function clientTosever() 
 { 
@@ -7,10 +7,10 @@ SERVER="192.168.1.4"
 USER="firoj"
 PASS="  "
 #login to remote server_directory
-ftp -inv "${SERVER}" <<enteringlines
+ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
-cd "$currentdir"
-ls
+lcd "$currentdir"
+mput sent*
 enteringlines
 }
 
@@ -22,10 +22,10 @@ USER="firoj"
 PASS="  "
 
 #login to remote server_directory
-ftp -inv "${SERVER}" <<enteringlines
+ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
-cd "$currentdir"
-mget *.html
+lcd "$currentdir"
+mget download*
 bye
 enteringlines
 }
@@ -33,7 +33,7 @@ enteringlines
 function menu()
 {
 
-	echo -e "\n\nCLIENT-SERVER DEMONSTRATION USING FTP CONNECTION \n-------------------------------------------------"
+	echo -e "\nCLIENT-SERVER DEMONSTRATION USING FTP CONNECTION \n-------------------------------------------------"
 	echo "1. Show file in the Current Directory"
 	echo "2. Transfer the file From Client to Server"
 	echo "3. Download the file from Server to Client"
@@ -47,9 +47,9 @@ do
 read choice
 case $choice in
     1)
-	    echo -e "\nFiles in the current directory are:\n--------------------------------------"
+	    echo -e "\nFiles in the current directory are:\n-----------------------------------------------------------------------------"
 	    ls
-	    echo
+	    echo -e "-----------------------------------------------------------------------------"
 	    menu
 	    ;;
     2)
