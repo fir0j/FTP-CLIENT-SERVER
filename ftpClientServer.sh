@@ -9,7 +9,7 @@ PASS="  "
 #login to remote server_directory
 ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
-lcd "/home/firoj/Desktop/"
+cd Desktop
 mput *.html
 enteringlines
 }
