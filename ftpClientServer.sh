@@ -9,7 +9,7 @@ PASS="  "
 #login and chaning to remote server_directory
 ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
-cd Desktop
+cd Desktop #directory for files to be uploaded
 mput *.html
 enteringlines
 }
@@ -24,8 +24,8 @@ PASS="  "
 #login and changing to our CWD
 ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
-lcd "$currentdir"
-cd Desktop
+cd Desktop #directory from where to download files
+lcd "$currentdir" #directory to keep downloaded files
 mget *.html
 bye
 enteringlines
