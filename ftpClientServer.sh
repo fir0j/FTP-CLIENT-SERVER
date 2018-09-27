@@ -10,7 +10,7 @@ PASS="  "
 ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
 lcd "$currentdir"
-mput sent*
+mput *
 enteringlines
 }
 
@@ -25,7 +25,7 @@ PASS="  "
 ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
 lcd "$currentdir"
-mget download*
+mget *
 bye
 enteringlines
 }
