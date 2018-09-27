@@ -36,7 +36,7 @@ function menu()
 
 	echo -e "\nCLIENT-SERVER DEMONSTRATION USING FTP CONNECTION \n-------------------------------------------------"
 	echo "1. Show files in the Current Working Directory (CWD)"
-	echo "2. Transfer All CWD files From to Server"
+	echo "2. Transfer All CWD files to Server"
 	echo "3. Download All files from Server to CWD"
 	echo "4. Exit"
 }
