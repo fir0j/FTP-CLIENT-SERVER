@@ -9,7 +9,7 @@ PASS="  "
 #login to remote server_directory
 ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
-lcd "$currentdir"
+lcd "/home/firoj/Desktop/"
 mput *.html
 enteringlines
 }
@@ -34,7 +34,7 @@ function menu()
 {
 
 	echo -e "\nCLIENT-SERVER DEMONSTRATION USING FTP CONNECTION \n-------------------------------------------------"
-	echo "1. Show files in the Current Working Directory"
+	echo "1. Show files in the Current Working Directory (CWD)"
 	echo "2. Transfer All CWD files From to Server"
 	echo "3. Download All files from Server to CWD"
 	echo "4. Exit"
