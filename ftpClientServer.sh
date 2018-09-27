@@ -10,7 +10,7 @@ PASS="  "
 ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
 lcd "$currentdir"
-mput *
+mput *.html
 enteringlines
 }
 
@@ -25,7 +25,7 @@ PASS="  "
 ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
 lcd "$currentdir"
-mget *
+mget *.html
 bye
 enteringlines
 }
@@ -34,9 +34,9 @@ function menu()
 {
 
 	echo -e "\nCLIENT-SERVER DEMONSTRATION USING FTP CONNECTION \n-------------------------------------------------"
-	echo "1. Show file in the Current Directory"
-	echo "2. Transfer the file From Client to Server"
-	echo "3. Download the file from Server to Client"
+	echo "1. Show files in the Current Working Directory"
+	echo "2. Transfer All CWD files From to Server"
+	echo "3. Download All files from Server to CWD"
 	echo "4. Exit"
 }
 
