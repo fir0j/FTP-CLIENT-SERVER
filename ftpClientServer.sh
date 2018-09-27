@@ -6,7 +6,7 @@ function clientTosever()
 SERVER="192.168.1.2"
 USER="firoj"
 PASS="  "
-#login to remote server_directory
+#login and chaning to remote server_directory
 ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
 cd Desktop
@@ -21,10 +21,11 @@ SERVER="192.168.1.2"
 USER="firoj"
 PASS="  "
 
-#login to remote server_directory
+#login and changing to our CWD
 ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
 lcd "$currentdir"
+cd Desktop
 mget *.html
 bye
 enteringlines
