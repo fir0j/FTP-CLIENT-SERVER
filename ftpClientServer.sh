@@ -3,7 +3,7 @@
 function clientTosever() 
 { 
 	
-SERVER="192.168.1.8"
+SERVER="192.168.1.2"
 USER="firoj"
 PASS="  "
 #login to remote server_directory
@@ -17,7 +17,7 @@ enteringlines
 function serverToclient() 
 { 
 	
-SERVER="192.168.1.8"
+SERVER="192.168.1.2"
 USER="firoj"
 PASS="  "
 
