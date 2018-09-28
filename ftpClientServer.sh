@@ -4,8 +4,8 @@ function clientTosever()
 { 
 	
 SERVER="192.168.1.2"
-USER="firoj"
-PASS="  "
+USER="username"
+PASS="********"
 #login and chaning to remote server_directory
 ftp -pinv "${SERVER}" <<enteringlines
 user "${USER}" "${PASS}"
@@ -18,8 +18,8 @@ function serverToclient()
 { 
 	
 SERVER="192.168.1.2"
-USER="firoj"
-PASS="  "
+USER="username"
+PASS="******"
 
 #login and changing to our CWD
 ftp -pinv "${SERVER}" <<enteringlines
